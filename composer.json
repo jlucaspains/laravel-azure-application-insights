@@ -40,16 +40,16 @@
   "extra": {
     "laravel": {
       "providers": [
-        "jlucaspains\\ApplicationInsights\\ServiceProvider"
+        "Mondago\\ApplicationInsights\\ServiceProvider"
       ],
       "aliases": {
-        "Insights": "jlucaspains\\ApplicationInsights\\Facade"
+        "Insights": "Mondago\\ApplicationInsights\\Facade"
       }
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "jlucaspains\\ApplicationInsights\\Tests\\": "tests"
+      "Mondago\\ApplicationInsights\\Tests\\": "tests"
     }
   },
   "config": {
