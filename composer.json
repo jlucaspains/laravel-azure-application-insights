@@ -1,5 +1,5 @@
 {
-  "name": "mondago/laravel-application-insights",
+  "name": "jlucaspains/laravel-application-insights",
   "description": "A Laravel 8 package to send application insights to Microsoft Application Insights",
   "keywords": [
     "Mondago",
@@ -8,7 +8,7 @@
     "monitoring",
     "laravel"
   ],
-  "homepage": "https://github.com/Mondago/laravel-application-insights",
+  "homepage": "https://github.com/jlucaspains/laravel-application-insights",
   "license": "MIT",
   "authors": [
     {
@@ -19,7 +19,7 @@
   "require": {
     "php": "^8.0.2",
     "laravel/framework": "^9.19",
-    "mondago/application-insights": "^0.5.1"
+    "jlucaspains/application-insights": "^0.5.1"
   },
   "require-dev": {
     "orchestra/testbench": "^7.0",
@@ -40,16 +40,16 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Mondago\\ApplicationInsights\\ServiceProvider"
+        "jlucaspains\\ApplicationInsights\\ServiceProvider"
       ],
       "aliases": {
-        "Insights": "Mondago\\ApplicationInsights\\Facade"
+        "Insights": "jlucaspains\\ApplicationInsights\\Facade"
       }
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Mondago\\ApplicationInsights\\Tests\\": "tests"
+      "jlucaspains\\ApplicationInsights\\Tests\\": "tests"
     }
   },
   "config": {
