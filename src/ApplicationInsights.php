@@ -152,7 +152,11 @@ class ApplicationInsights
         $this->addRequestProperty('querystring', $request->getQueryString());
         $this->addRequestProperty('ip', $request->ip());
         $this->addRequestProperty('user-agent', $request->userAgent());
-        $this->addRequestProperty('user', $request->user().email);
+        
+        if($request->user() != null && $request->user().email != null) {
+            $this->addRequestProperty('user', $request->user().email);
+        }
+        
         $this->addRequestProperty('secure', $request->secure());
         $this->addRequestProperty('referer', $request->server->get('referer'));
         $this->addRequestProperty('method', $request->method());
