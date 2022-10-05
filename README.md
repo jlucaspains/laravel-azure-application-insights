@@ -8,7 +8,7 @@ Add the following to your _composer.json_ file:
 "repositories": [
     {
         "type": "git",
-        "url": "https://github.com/mondago/laravel-azure-application-insights"
+        "url": "https://github.com/jlucaspains/laravel-azure-application-insights"
     }
 ],
 ```
@@ -16,7 +16,7 @@ Add the following to your _composer.json_ file:
 and require it by adding the following line to your _composer.json_ file under "require":
 
 ```
-"mondago/laravel-application-insights": "^0.5.0"
+"jlucaspains/laravel-application-insights": "^0.5.0"
 ```
 
 Optionally, you can publish the config file of this package with this command:
