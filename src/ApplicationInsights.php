@@ -92,6 +92,10 @@ class ApplicationInsights
             return;
         }
         try {
+            if($request->user() != null) {
+                $this->insights->getContext()->getUserContext()->setId($request->user()->email);
+            }
+
             $this->setDefaultRequestProperties($request);
 
             $this->insights->trackRequest(
@@ -100,7 +104,7 @@ class ApplicationInsights
                 $this->getRequestStartTime(),
                 $this->getRequestDurationTime(),
                 $response->getStatusCode(),
-                $response->isSuccessful(),
+                $response->isSuccessful() or $response->getStatusCode() == 302,
                 $this->getRequestProperties(),
                 $this->requestMeasurements
             );
@@ -152,11 +156,6 @@ class ApplicationInsights
         $this->addRequestProperty('querystring', $request->getQueryString());
         $this->addRequestProperty('ip', $request->ip());
         $this->addRequestProperty('user-agent', $request->userAgent());
-        
-        if($request->user() != null && $request->user().email != null) {
-            $this->addRequestProperty('user', $request->user().email);
-        }
-        
         $this->addRequestProperty('secure', $request->secure());
         $this->addRequestProperty('referer', $request->server->get('referer'));
         $this->addRequestProperty('method', $request->method());
